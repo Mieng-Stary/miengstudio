@@ -1,0 +1,326 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: 400vh;
+    background-color: #111111;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: MiSans-Normal;
+    /* font-family: MiSans-Regular; */
+    /* font-family: SmileySans-Oblique-2; */
+}
+
+a{
+    text-decoration: none;
+}
+a:hover::before{
+    transform: scaleX(1);
+}
+a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 10%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    opacity: inherit;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+  }
+
+@font-face{
+    font-family: 'MiSans-Normal';
+    src: url("../fonts/MiSans-Normal.ttf");
+    /* font-family: 'MiSans-Regular';
+    src: url("../fonts/MiSans-Regular.ttf");
+    font-family: 'SmileySans-Oblique-2';
+    src: url("../fonts/SmileySans-Oblique-2.ttf"); */
+}
+
+.top-background{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100px;
+    background-color: #1F1F1F;
+    z-index: -1;
+}
+h1{
+    color: white;
+    background-color: transparent;
+    display: flex;
+    width: 75px;
+    height: 27px;
+    margin-left: calc(5vw - 2px);
+    font-size: 25px;
+}
+#MIENG{
+    margin-top: 20px;
+}
+#LOGO-MIENGSTUDIO-light{
+    position: absolute;
+    width: 2.5vw;
+    height: 2.5vw;
+    margin-top: 0.4vw;
+    margin-left: 2vw;
+}
+.navigation-btn{
+    position: absolute;
+    opacity: 87%;
+    color: white;
+    display: flex;
+    margin-top: -35px;
+    font-weight: 500;
+    width: 65px;
+    height: 20px;
+    font-size: 16px;
+}
+#basicInformation-btn{
+    margin-left: 76vw;
+}
+#worksLibrary-btn{
+    margin-left: 83vw;
+}
+#feedback-btn{
+    margin-left: 90vw;
+}
+.navigation-idx{
+    position: relative;
+    opacity: 87%;
+    color: white;
+    display: flex;
+    margin-left: 130px;
+    width: 160px;
+    height: 55px;
+    font-size: 40px;
+    font-weight: bold;
+}
+#basicInformation-idx{
+    margin-top: 600px;
+}
+#worksLibrary-idx{
+    margin-top: 1000px;
+}
+#feedback-idx{
+    margin-top: 1000px;
+}
+.ad{
+    display: flex;
+    position: absolute;
+    left: 5px;
+    margin-top: 50px;
+    width: calc(100vw - 22px);
+    height: 55vh;
+    background-color: #1F1F1F;
+    transition: 0.5s;
+    overflow: hidden;
+}
+#ad_I-B img{
+    width: calc(795px * 2.35);
+    height: calc(455px * 2.35);
+    opacity: 1;
+}
+.ad_innerText-box{
+    margin-top: 20vh;
+}
+.ad_innerText{
+    opacity: 87%;
+    color: white;
+    width: 300px;
+}
+#ad_innerText-1{
+    margin-left: -50vw;
+    font-size: 40px;
+    font-weight: 700;
+}
+#ad_innerText-2{
+    margin-left: -50vw;
+    margin-top: 1vh;
+    font-size: 20px;
+    font-weight: 500;
+}
+#ad_innerText-3{
+    margin-left: -50vw;
+    margin-top: 1vh;
+    font-size: 20px;
+    font-weight: 500;
+}
+#ad_I-B{
+    margin-top: -280px;
+    transition: 0.5s;
+}
+
+.modules{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+input{
+    display: none;
+}
+input:nth-child(1):checked ~ .icon label:nth-child(1){
+    opacity: 87%;
+}
+input:nth-child(2):checked ~ .icon label:nth-child(2){
+    opacity: 87%;
+}
+input:nth-child(3):checked ~ .icon label:nth-child(3){
+    opacity: 87%;
+}
+input:nth-child(4):checked ~ .icon label:nth-child(4){
+    opacity: 87%;
+}
+input:nth-child(1):checked ~ .icon .indicator{
+    left:0%;
+}
+input:nth-child(2):checked ~ .icon .indicator{
+    left: 25%;
+}
+input:nth-child(3):checked ~ .icon .indicator{
+    left: 50%;
+}
+input:nth-child(4):checked ~ .icon .indicator{
+    left: 75%;
+}
+/* input:nth-child(1):checked ~ .content{
+    background-color: #b52d2d;
+}
+input:nth-child(2):checked ~ .content{
+    background-color: #b3b52d;
+}
+input:nth-child(3):checked ~ .content{
+    background-color: #2db538;
+}
+input:nth-child(4):checked ~ .content{
+    background-color: #a12db5;
+} */
+input:nth-child(1):checked ~ .content .content-box:nth-child(1){
+    opacity: 87%;
+}
+input:nth-child(2):checked ~ .content .content-box:nth-child(2){
+    opacity: 87%;
+}
+input:nth-child(3):checked ~ .content .content-box:nth-child(3){
+    opacity: 87%;
+}
+input:nth-child(4):checked ~ .content .content-box:nth-child(4){
+    opacity: 87%;
+}
+.icon{
+    display: flex;
+    position: absolute;
+}
+label{
+    width: 80px;
+    height: 80px;
+    margin: 50px;
+    font-size: 5em;
+    text-align: center;
+    opacity: 0.5;
+    z-index: 2;
+    transition: 0.5s;
+    color: white;
+}
+label:hover{
+    opacity: 0.3;
+}
+label:active{
+    opacity: 0.7;
+}
+.indicator{
+    position: absolute;
+    top: 50px;
+    width: 10px;
+    height: 100px;
+    opacity: 87%;
+    background-color: white;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.content{
+    position: absolute;
+    width: 85vw;
+    height: 620px;
+    top: 105%;
+    border-radius: 10px;
+    background-color: #1F1F1F;
+    opacity: 1;
+    transition: 0.5s;
+    z-index: -1;
+}
+.content-box{
+    position: absolute;
+    padding: 50px;
+    opacity: 0;
+    color: white;
+    transition: 0.5s;
+}
+.content-box h3{
+    opacity: 60%;
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.content-box p{
+    opacity: 87%;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.library{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.worksContainer{
+    position: absolute;
+    background-color: #1F1F1F;
+    border-radius: 10px;
+    width: 85vw;
+    height: 86.5vh;
+    overflow: hidden;
+}
+.works{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    background-color: gray;
+    width: 15vw;
+    height: 40vh;
+    border-radius: 8px;
+}
+
+#toTop{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 50px;
+    bottom: 50px;
+    opacity: 87%;
+    background-color: white;
+    border-radius: 30px;
+    transition: 0.2s;
+}
+#toTop i{
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+#toTop:hover{
+    box-shadow: 0 0 10px gray;
+}
+#toTop:active{
+    background-color: gray;
+}
