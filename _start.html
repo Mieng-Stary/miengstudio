@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style/css/style.css">
+</head>
+
+<body>
+    <div class="title">
+        <div class="top-background"></div>
+        <img src="../MIENG STUDIO/images/LOGO-MIENGSTUDIO-light.png" id="LOGO-MIENGSTUDIO-light">
+        <h1 id="MIENG">MIENG</h1>
+        <h1 id="STUDIO">STUDIO</h1>
+        <div class="navigation-bar">
+            <div class="navigation-btns">
+                <a class="navigation-btn" id="basicInformation-btn" href="#info">基本信息</a>
+                <a class="navigation-btn" id="worksLibrary-btn" href="#worksLibrary">作品总集</a>
+                <a class="navigation-btn" id="feedback-btn" href="#feedback">意见反馈</a>
+            </div>
+        </div>
+        <div class="ad">
+            <div id="ad_I-B"><img src="../MIENG STUDIO/images/I-B.png"></div>
+            <div class="ad_innerText-box">
+                <h4 class="ad_innerText" id="ad_innerText-1">工作室更新</h4>
+                <h4 class="ad_innerText" id="ad_innerText-2">功能调整，UI重绘，更便捷地获取我们的最新作品</h4>
+                <h4 class="ad_innerText" id="ad_innerText-3" href="#info">抢鲜体验▾</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="navigation-idxes"><a class="navigation-idx" id="basicInformation-idx" name="info" href="#info">基本信息</a></div>
+        <div class="modules">
+            <input type="radio" id="about" name="ground" checked></input>
+            <input type="radio" id="member" name="ground"></input>
+            <input type="radio" id="join" name="ground"></input>
+            <input type="radio" id="sponsor" name="ground"></input>
+            <div class="icon">
+                <label for="about"><i class='bx bx-info-circle'></i></label>
+                <label for="member"><i class='bx bx-user'></i></label>
+                <label for="join"><i class='bx bx-clinic'></i></label>
+                <label for="sponsor"><i class='bx bx-bolt-circle'></i></label>
+                <div class="indicator"></div>
+            </div>
+            <div class="content">
+                <div class="content-box">
+                    <h3>关于</h3>
+                    <p>~</p>
+                    <p id="qwq1-1"></p>
+                </div>
+                <div class="content-box">
+                    <h3>成员</h3>
+                    <p>~</p>
+                    <p id="qwq2-1"></p>
+                    <p id="qwq2-2"></p>
+                    <p id="qwq2-3"></p>
+                    <p id="qwq2-4"></p>
+                    <p id="qwq2-5"></p>
+                </div>
+                <div class="content-box">
+                    <h3>加入</h3>
+                    <p>~</p>
+                    <p id="qwq3-1"></p>
+                    <p id="qwq3-2"></p>
+                </div>
+                <div class="content-box">
+                    <h3>赞助</h3>
+                    <p>~</p>
+                    <p id="qwq4-1"></p>
+                    <p id="qwq4-2"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-idxes"><a class="navigation-idx" id="worksLibrary-idx" name="worksLibrary" href="#worksLibrary">作品总集</a></div>
+        <div class="library">
+            <div class="worksContainer">
+                <div class="works" id="1">
+                    <h3>111</h3>
+                </div>
+                <div class="works" id="2">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-idxes"><a class="navigation-idx" id="feedback-idx" name="feedback" href="#feedback">意见反馈</a></div>
+        <div class="saySth">
+
+        </div>
+    </div>
+
+    <div class="other">
+        <div id="toTop"><i class='bx bxs-to-top'></i></div>
+    </div>
+
+    <script>
+        fetch('data/basicInfo_content.json')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('qwq1-1').innerHTML = data.about1;
+            document.getElementById('qwq2-1').innerHTML = data.member1;
+            document.getElementById('qwq2-2').innerHTML = data.member2;
+            document.getElementById('qwq2-3').innerHTML = data.member3;
+            document.getElementById('qwq2-4').innerHTML = data.member4;
+            document.getElementById('qwq2-5').innerHTML = data.member5;
+            document.getElementById('qwq3-1').innerHTML = data.join1;
+            document.getElementById('qwq3-2').innerHTML = data.join2;
+            document.getElementById('qwq4-1').innerHTML = data.sponsor1;
+            document.getElementById('qwq4-2').innerHTML = data.sponsor2;
+        })
+
+        this.document.documentElement.scrollTop = 0;
+        let ad_I_B = document.getElementById('ad_I-B');
+        let toTop_btn = document.getElementById('toTop');
+        let picture_idx = 0;
+        // const movePicture1_1 = [
+        //     { transform: "translateX(0%)" },
+        //     { transform: "translateX(-101%)" },
+        // ];
+        // const movePicture2_1 = [
+        //     { transform: "translateX(0%)" },
+        //     { transform: "translateX(-101%)" },
+        // ];
+        // const movePicture1_2 = [
+        //     { transform: "translateX(101%)" },
+        //     { transform: "translateX(0%)" },
+        // ];
+        // const movePicture2_2 = [
+        //     { transform: "translateX(-101%)" },
+        //     { transform: "translateX(-202%)" },
+        // ];
+        // var about_check = document.getElementById('about');
+        // var member_check = document.getElementById('member');
+        // var join_check = document.getElementById('join');
+        // var sponsor_check = document.getElementById('sponsor');
+
+        // var r = confirm('切换至全屏以获得最佳体验');
+        // if(!r){
+        //     window.close();
+        // }
+
+        var toTop_intervId = setInterval(() => {
+            scrollTop = document.documentElement.scrollTop;
+            if (scrollTop >= 40) {
+                document.getElementById('toTop').style.opacity = 1;
+            } else {
+                document.getElementById('toTop').style.opacity = 0;
+            }
+        }, 100);
+        // function pictureChange-1.0(){
+        //     var picture_intervId = setInterval(()=>{
+        //     picture_idx++;
+        //     ad_picList.style.transition = 'all 0.5s ease 0s';
+        //     ad_picList.style.marginLeft = -1868.25 * picture_idx + 'px';
+        //     if(picture_idx === 3){
+        //         picture_idx = 0;
+        //         ad_picList.style.transition = 'all 0s ease 0s';
+        //         ad_picList.style.marginLeft = 0;
+        //     }
+        //     },2000);
+        // }
+        // ignore
+        // function pictureChange() {
+        //     var picture_intervId = setInterval(() => {
+        //         picture_idx++;
+        //         switch(picture_idx){
+        //             case 1:{
+        //                 ad_I_A.animate(movePicture1_1,500);
+        //                 ad_I_B.animate(movePicture2_1,500);
+        //                 ad_I_A.style.transform = 'translateX(-101%)';
+        //                 ad_I_B.style.transform = 'translateX(-101%)';
+        //                 dot1.classList.remove('active');
+        //                 dot2.classList.add('active');
+        //                 break;
+        //             }
+        //             case 2:{
+        //                 picture_idx = 0;
+        //                 ad_I_A.animate(movePicture1_2,500);
+        //                 ad_I_B.animate(movePicture2_2,500);
+        //                 ad_I_A.style.transform = 'translateX(0%)';
+        //                 ad_I_B.style.transform = 'translateX(-202%)';
+        //                 dot1.classList.add('active');
+        //                 dot2.classList.remove('active');
+        //                 break;
+        //             }
+        //             default :{
+        //                 break;
+        //             }
+        //         }
+        //     },5000);
+        // }
+
+        toTop_btn.onclick = function () {
+            document.documentElement.scrollTop = 0;
+        }
+
+    </script>
+</body>
+
+</html>
